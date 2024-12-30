@@ -1,0 +1,136 @@
+#header {
+    background: #fff;
+    padding: 10px 0;
+    .navbar-nav {
+        @include max(992px) {
+            padding: 15px 0 0;
+        }
+        li {
+            a {
+                color: #5E636C;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 22px;
+                padding: 0.5rem 0.7rem;
+                @include max(992px) {
+                    padding: 15px 0 !important;
+                    border-bottom: 1px solid #000;
+                }
+                &.active {
+                    color: #242424;
+                }
+                @include max(1400px) {
+                    font-size: 18px;
+                    line-height: 20px;
+                }
+                @include max(1200px) {
+                    font-size: 15px;
+                    line-height: 17px;
+                    padding: 0.5rem 0.5rem;
+                }
+            }
+        }
+        .dropdown {
+            .dropdown-menu {
+                li {
+                    a {
+                        &:active {
+                            background-color: #e9ecef;
+                        }
+                    }
+                }
+            }
+        }
+        @include max(992px) {
+            .dropdown {
+                .dropdown-menu {
+                    border: 0;
+                    padding: 0;
+                    li {
+                        a {
+                            padding: 10px 15px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include max(992px) {
+        .navbar-brand {
+            img {
+                width: 200px;
+                @include max(575px) {
+                    width: 150px;
+                }
+            }
+            @include max(575px) {
+                padding: 0 0 0 9rem;
+            }
+            @include max(480px) {
+                padding: 0 0 0 8rem;
+            }
+            @include max(450px) {
+                padding: 0 0 0 7rem;
+            }
+            @include max(400px) {
+                padding: 0 0 0 6rem;
+            }
+            @include max(375px) {
+                padding: 0 0 0 4rem;
+            }
+        }
+    }
+    .navbar-toggler {
+        padding: 0;
+        &:focus {
+            box-shadow: none;
+        }
+        #navicon {
+            position: relative;
+            width: 25px;
+            height: 25px;
+            padding: 0;
+            border-radius: 5px;
+            span {
+                display: block;
+                position: absolute;
+                height: 2px;
+                width: 100%;
+                background: #000;
+                border-radius: 9px;
+                opacity: 1;
+                margin: 0 auto;
+                transform: rotate(0deg);
+                transition: 0.25s ease-in-out;
+                right: 0; 
+                &:first-child {
+                    top: 9px;
+                }
+                &:last-child {
+                    top: 21px;
+                    width: 65%;
+                }
+                &:nth-child(2) {
+                    top: 15px;
+                }
+            }
+            &.open {
+                span {
+                    &:first-child {
+                        transform: rotate(135deg);
+                        top: 15px;
+                    }
+                    &:last-child {
+                        transform: rotate(-135deg);
+                        top: 15px;
+                        width: 100%;
+                    }
+                    &:nth-child(2) {
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+}
